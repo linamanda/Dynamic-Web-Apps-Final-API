@@ -8,7 +8,7 @@ const firestore = require("firebase/firestore");
 // Initialize Firestore Database
 const db = firestore.getFirestore();
 
-// TODO: Get single post from firebase by ID
+// Get single post from firebase by ID
 router.get("/:id", (req, res) => {
   const postId = req.params.id;
   const post = firestore.getDoc(firestore.doc(db, "posts", postId));
