@@ -21,7 +21,11 @@ router.get("/:id", (req, res) => {
   posts
     .then((response) => {
       response.forEach((doc) => {
-        if (doc.data().uid == userId) userPostsArray.push(doc.data());
+        const docData = doc.data();
+        if (docData.uid == userId) {
+          docData.pid = doc.id;
+          userPostsArray.push(docData);
+        }
       });
       return res.send(userPostsArray);
     })
