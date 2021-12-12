@@ -43,11 +43,13 @@ app.use(function (req, res, next) {
 const indexRoute = require("./routes/index.js");
 const postRoute = require("./routes/post.js");
 const createPostRoute = require("./routes/createPost.js");
+const userPostsRoute = require("./routes/userPosts.js");
 
 // Express route usage
 app.use("/", indexRoute);
 app.use("/post", postRoute);
 app.use("/create", createPostRoute);
+app.use("/user", userPostsRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
