@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
   posts
     .then((response) => {
       response.forEach((doc) => {
-        postsArray.push(doc.data());
+        const docData = doc.data();
+        docData.pid = doc.id;
+        postsArray.push(docData);
       });
       return res.send(postsArray);
     })

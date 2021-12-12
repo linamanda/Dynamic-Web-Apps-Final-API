@@ -16,15 +16,15 @@ router.get("/:id", (req, res) => {
     .then((response) => {
       const postData = response.data();
       if (postData) return res.send(postData);
-      return res.send(`Post does not exist...`);
+      return res.send({ message: `Post does not exist...` });
     })
     .catch((error) => {
-      res.send();
+      res.send(error);
     });
 });
 
-router.get("/", (req, res) => {
-  res.send(`Please include an ID`);
-});
+// router.get("/", (req, res) => {
+//   res.send(`Please include an ID`);
+// });
 
 module.exports = router;
