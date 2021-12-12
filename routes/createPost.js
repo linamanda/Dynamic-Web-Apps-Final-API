@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
     imgAlt,
     imgSrc,
     message,
-    timestamp: firestore.FieldValue.serverTimestamp(),
+    timestamp: firestore.FieldValue.serverTimestamp,
     uid,
     username,
   });
